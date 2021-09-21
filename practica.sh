@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/usr/bin/bash
 
 selected=`ls ~/code/workspace | rofi -show -dmenu -i` 
 mydir="/code/workspace/${selected}"
@@ -11,7 +11,7 @@ tmux new-session -s 'work' -d
 tmux rename-window -t work $selected
 
 tmux send-keys -t work 'nvim .' C-m
-tmux split-window -h -l 10% -t work 
+tmux split-window -h -l 30% -t work 
 tmux select-pane -t 0
 
 tmux select-window -t work:1
