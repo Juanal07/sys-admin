@@ -1,5 +1,4 @@
 #!/bin/sh
-
 if [ $# -eq 2 ]
   then if [ -d $1 ]
   then
@@ -21,7 +20,7 @@ fi
 if [ $# -eq 0 ]
 then
   echo Tiene 0 argumentos
-  echo Nº de ficheros con sin extensión en el directorio actual: `ls -p | grep -v / | grep -v "\." | wc -l`
+  echo Nº de ficheros sin extensión en el directorio actual: `ls -p | grep -v / | grep -v "\." | wc -l`
   echo Nº de directorios: `ls -p | grep -E / | wc -l`
 fi
 

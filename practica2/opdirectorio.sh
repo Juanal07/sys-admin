@@ -9,19 +9,39 @@ listar(){
 eliminarZero(){
   echo ¿Sobre que directorio quiere actuar?
   read directorio
-  echo hola
+  if [ "$directorio" = "" ]
+  then
+    find . -maxdepth 1 -type f -size 0b -delete 
+  else
+    find $directorio -maxdepth 1 -type f -size 0b -delete 
+  fi
+  echo Archivos eliminados
 }
 
 eliminarObjetos(){
   echo ¿Sobre que directorio quiere actuar?
   read directorio
-  echo hola
+  if [ "$directorio" = "" ]
+  then
+    find . -maxdepth 1 -type f -name '*.o' -delete 
+  else
+    find $directorio -maxdepth 1 -type f -name '*.o' -delete 
+  fi
+  echo Archivos eliminados
 }
 
 eliminarExt(){
   echo ¿Sobre que directorio quiere actuar?
   read directorio
-  echo hola
+  echo ¿Extensión a eliminar?
+  read extension
+  if [ "$directorio" = "" ]
+  then
+    find . -maxdepth 1 -type f -name "*.$extension" -delete 
+  else
+    find $directorio -maxdepth 1 -type f -name "*.$extension" -delete 
+  fi
+  echo Archivos eliminados
 }
 
 while [ true ]
