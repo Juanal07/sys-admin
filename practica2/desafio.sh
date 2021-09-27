@@ -6,7 +6,7 @@
 # echo Interfaces: `ip link show`
 # echo IPs: `ip addr | grep inet`
 # echo Usuario: `whoami`
-# echo OS: `grep 'PRETTY_NAME' /etc/os-release`
+# echo OS: `grep 'PRETTY_NAME' /etc/os-release | grep -Eo '".*"'`
 
 recursos(){
   while [ true ]
@@ -54,7 +54,7 @@ general(){
   read opcion
   case $opcion in 
     1) echo Usuario: `whoami`;;
-    2) echo OS: `grep 'PRETTY_NAME' /etc/os-release`;;
+    2) echo OS: `grep 'PRETTY_NAME' /etc/os-release | grep -Eo '".*"'`;;
     3) break;;
     *) echo Por favor, introduzca una opción válida;;
   esac
