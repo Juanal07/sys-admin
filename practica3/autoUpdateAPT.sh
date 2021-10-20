@@ -15,5 +15,3 @@ apt-get --fix-broken install
 apt-get --download-only --yes upgrade # El yes sirve para que escriba yes cuando salga el prompt y asi evitar que se quede parado
 apt-get autoremove
 exit 0
-
-# https://matjaz.it/automatically-update-a-debian-ubuntu-using-apt-get-and-cron/
